@@ -1,0 +1,295 @@
+@charset "UTF-8";
+/*==========================*/
+
+/*==========페이지 기본 스타일 시작======*/
+.page-main-style{
+	width:100%;
+	margin:0 auto;
+}
+.one-page{
+	width:600px;
+	margin:0 auto;
+}
+.modify-btn{
+	margin: 0px 3px 0px 15px;
+}
+.modify-btn, .delete-btn {
+    float: right;
+    border: 0px;
+    background: none;
+    padding: 0 3px;
+    color: #a6a6a6;
+    font-size: 12px;
+    cursor: pointer;
+}
+/*==========페이지 기본 스타일 끝 ======*/
+
+/*======== 게시판 디자인 시작 ========*/
+
+.image{
+	float:right;
+	margin-top:-10px;
+}
+
+.title {
+    padding: 15px;
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+}
+.free_post {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: -1px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+    display: block;
+    padding: 15px;
+}
+.free_post > h2 {
+	margin: 0;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-weight: 400;
+    color: #292929;
+}
+.free_post > .small {
+	margin-bottom: 5px;
+    max-height: 30px;
+    line-height: 15px;
+    white-space: normal;
+    overflow: hidden;
+    font-size: 12px;
+    color: #a6a6a6;
+}
+.tag {
+    float: left;
+    border: none;
+    background-color: white;
+    background-image: url(https://everytime.kr/images/new/container.articles.write.hashtag.png);
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#addInput{
+	display:none;
+}
+.page-main-style-detail {
+	margin-bottom: -1px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+}
+
+a.article2 {
+    display: block;
+    padding: 15px;
+}
+/*======== 게시판 디자인 끝 ========*/
+
+/*======== Mypage 추가 시작 ========*/
+article img.picture.large {
+    margin: 0 10px 15px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+article img.picture {
+    float: left;
+}
+article div.profile {
+    float: left;
+    margin-bottom: 15px;
+    height: 40px;
+}
+article h3.large {
+	margin: 0px;
+    height: 20px;
+    max-width: 200px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+article time.large {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+article ul.status {
+    float: right;
+}
+article hr {
+    clear: both;
+    height: 0;
+    border: 0;
+}
+
+.wrapstatus ul.status li.vote{
+	padding-left: 15px;
+	color: #c62917;
+	background-image:url(https://everytime.kr/images/new/container.articles.vote.png);
+}
+
+.wrapstatus ul.status li.comm{
+	padding-left: 15px;
+    color: #0ca5af;
+    background-image:url(https://everytime.kr/images/new/container.articles.comment.png)
+}
+
+
+.wrapstatus ul.status li{
+	background-size: 12px 12px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	margin-left: 8px;
+	float:left;
+
+}
+ul.option li{
+	background-image:url(https://everytime.kr/images/new/container.articles.write.hashtag.png)
+
+}
+
+.reply-vote{
+	background-position: left center;
+	padding-left: 15px;
+	background-size: 12px 12px;
+	color: #c62917;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	background-image:url(https://everytime.kr/images/new/container.articles.vote.png);
+}
+
+/*======== Mypage 추가 끝 ========*/
+
+/*============= 수정폼 시작 ==============*/
+.board_title {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    border: 0;
+    color: #292929;
+    font-size: 16px;
+    font-weight: bold;
+    outline:none
+}
+.board_p {
+    padding: 15px;
+    margin: 0px;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #fff;
+}
+.board_p > textarea {
+	width: 100%;
+	height: 350px;
+    border: 0;
+    color: #292929;
+    font-size: 14px;
+    resize: none;
+    outline:none
+    
+}
+/*============= 수정폼 끝 ==============*/
+/*============= 동민 추가 (나중에 맞추기)==============*/
+
+.title {
+    padding: 15px;
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+}
+.title > a {
+   display: block;
+}
+#freeBoardVO {
+	 overflow: hidden;
+}
+input#anonymous + label span{
+   font-size: 15px;
+   color: transparent;
+}
+input.submit {
+   float:right;
+   color: transparent;
+   background:url(https://everytime.kr/images/new/container.articles.write.submit.png);
+   background-size: 40px 40px;
+   background-color:#c62917;
+   width:40px;
+   height:40px;
+   border: 0;
+   cursor: pointer;
+}
+input#anonymous{
+  display: none;
+}
+.fileUpload {
+   display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-size: 40px 40px;
+    background-image: url(https://everytime.kr/images/new/container.articles.write.attach.png);
+}
+input#anonymous + label {
+	float:right;
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url(https://everytime.kr/images/new/container.articles.write.anonym.png);
+    background-size: 40px 40px;
+}
+input#anonymous:checked + label{
+   display: inline-block;
+   width: 40px;
+   height: 40px;
+   background-image: url(https://everytime.kr/images/new/container.articles.write.anonym.active.png);
+   background-size: 40px 40px;
+}
+div#freeBoard_title{
+	line-height: 20px;
+    color: #c62917;
+    font-size: 14px;
+    font-weight: bold;
+}
+#freeBoard_title{
+    line-height: 20px;
+    color: #c62917;
+    font-size: 14px;
+    font-weight: bold;
+}
+#more_comment{
+	border: 1px solid #e3e3e3;
+	background-color: rgba(0,0,0,0); 
+	color: black; 
+	padding: 5px;
+	margin-top:1px;
+
+}
+
+h2.large {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #292929;
+}
+
+p.large {
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #000000;
+    font-size: 14px;
+    padding: 0;
+}
+
+input:focus {outline:none;}
+a {text-decoration: none; color: black;}
+inactive > input[type="checkbox"] { /* 파일 필드 숨기기 */ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+input[type="file"] { /* 파일 필드 숨기기 */ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+.submit input[type="submit"] { /* 파일 필드 숨기기 */ position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }

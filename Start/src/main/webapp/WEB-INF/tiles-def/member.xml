@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="memberView" extends="main">
+    	<put-attribute name="title" value="회원정보"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/mypage.jsp"/>   
+    </definition>
+    <definition name="memberDelete" extends="main">
+    	<put-attribute name="title" value="회원탈퇴"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberDelete.jsp"/>  
+    </definition>
+        <definition name="memberDeleteComplete" extends="main">
+    	<put-attribute name="title" value="회원탈퇴 완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/deleteComplete.jsp"/>  
+    </definition>
+    <definition name="memberChangeE" extends="main">
+    	<put-attribute name="title" value="이메일변경"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberChangeEmail.jsp"/>  
+    </definition>
+    <definition name="memberChangeEmailSend" extends="main">
+    	<put-attribute name="title" value="메일전송완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/emailChangeMessage.jsp"/>  
+    </definition>
+    <definition name="memberChangeNick" extends="main">
+    	<put-attribute name="title" value="닉네임변경"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberChangeNickname.jsp"/>  
+    </definition>
+    <definition name="memberChangePasswd" extends="main">
+    	<put-attribute name="title" value="비밀번호 변경"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberChangePassword.jsp"/>  
+    </definition>
+    <definition name="memberChangePasswdComplete" extends="main">
+    	<put-attribute name="title" value="비밀번호 완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/passwordChangeComplete.jsp"/>  
+    </definition>
+        <definition name="writedBoardLi" extends="main1">
+    	<put-attribute name="title" value="내가 쓴 글 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/blank.jsp"/>  
+    </definition>
+        <definition name="freewritedBoardLi" extends="main1">
+    	<put-attribute name="title" value="자유게시판에 쓴 글"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/freeboardWritedList.jsp"/>  
+    </definition>    
+    <definition name="infowritedBoardLi" extends="main1">
+    	<put-attribute name="title" value="정보게시판에 쓴 글"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/infoboardWritedList.jsp"/>  
+    </definition>  
+        <definition name="customwritedBoardLi" extends="main2">
+    	<put-attribute name="title" value="커스텀게시판에 쓴 글"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/customboardWritedList.jsp"/>  
+    </definition> 
+     <definition name="writedCommentLi" extends="main1">
+    	<put-attribute name="title" value="내가 쓴 댓글 목록"/>
+    	<put-attribute name="navli" value="/WEB-INF/views/templateBoard/writedCommentnav.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/blank.jsp"/>  
+    </definition>
+       <definition name="writedFreeCommentLi" extends="main1">
+    	<put-attribute name="title" value="자유게시판 댓글 목록"/>
+    	<put-attribute name="navli" value="/WEB-INF/views/templateBoard/writedCommentnav.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/writedFreeCommentList.jsp"/>  
+    </definition>
+        <definition name="writedInfoCommentLi" extends="main1">
+    	<put-attribute name="title" value="정보게시판 댓글 목록"/>
+    	<put-attribute name="navli" value="/WEB-INF/views/templateBoard/writedCommentnav.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/writedInfoCommentList.jsp"/>  
+    </definition>
+    <definition name="main1" 
+               template="/WEB-INF/views/template/layoutForWritedBoardList.jsp">
+    	<put-attribute name="title" value="에브리미닛"/>
+    	<put-attribute name="navli" value="/WEB-INF/views/templateBoard/writedBoardnav.jsp"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>  
+    	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>        
+    </definition>
+    <definition name="main2" 
+               template="/WEB-INF/views/template/layoutForCustomBoardList.jsp">
+    	<put-attribute name="title" value="에브리미닛"/>
+    	<put-attribute name="navli" value="/WEB-INF/views/templateBoard/writedBoardnav.jsp"/>
+    	<put-attribute name="nav" value="/WEB-INF/views/templateBoard/navigationForWritedList.jsp"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>  
+    	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>        
+    </definition>
+
+</tiles-definitions>
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+td{
+	cursor: pointer;
+	border: 1px solid #ddd !important;
+	padding: 10px !important;
+}
+.table_form1:hover{
+	background-color: #aaa;
+	color: #fff;
+}
+.table_form1:hover span{
+	color: #fff;
+}
+a{
+	color: #666;
+}
+.top{
+	border: 1px solid #ddd;
+	width: 504px;
+	margin: auto;
+}
+.top>select{
+	border: none;
+}
+#keyword{
+	width: 390px;
+}
+.search_btn{
+	padding: 5px 7.9px;
+	cursor: pointer;
+}
+.info{
+	float: left;
+}
+.thumbnail{
+	float: left;
+}
+.complete{
+	float: right;
+}
+.data{
+	float: left;
+	margin-left: 10px;
+}
+.intro{
+	color: #666;
+	font-size: 9px;
+}
+.sell{
+	color: #c62917;
+	font-size: 20px;
+	font-weight: 800;
+}
+.price{
+	color: #666;
+	font-size: 15px;
+	font-weight: 800;
+	text-decoration: line-through;
+}
+input{
+	border: none; 
+}
+.menu{
+	float: right;
+	margin-bottom: 10px;
+}
+.nav1, .nav2{
+	height: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.option{
+	display: inline;
+}
+.table_form2{
+	color: #ddd !important;
+}
+.table_form2 span{
+	color: #ddd !important;
+}

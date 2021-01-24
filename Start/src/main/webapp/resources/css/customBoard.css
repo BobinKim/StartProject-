@@ -1,0 +1,735 @@
+@charset "UTF-8";
+/*==========메인 목록 시작======*/
+.float_left {
+	float: left;
+	margin: 0 0 5px 33px;
+}
+.marginBtn {
+	margin: 0px;
+    margin-left: 7px;
+}
+/*======== 게시판 생성 디자인 시작 ========*/
+.create_custBoard {
+    width: 1280px;
+    margin: 0 auto;
+}
+#custBoard_form{
+	width: 580px;
+	margin-top:40px;
+	border: 1px solid #a6a6a6;
+    border-radius: 10px;
+}
+.text_left {
+	text-align: left;
+}
+.customH2Title{
+	margin: 30px 0px 30px 25px;
+}
+#simpleImg, #imageImg {
+	width: 50px;
+	margin-left: 27px;
+}
+.customOK{
+	display: block;
+    width: 530px;
+    height: 40px;
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #c62917;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*======== 게시판 생성 디자인 끝 ========*/
+/*==========페이지 기본 스타일 시작======*/
+.page-main-style-info{
+	width:100%;
+	margin:0 auto;
+}
+.one-page{
+	width:600px;
+	margin:0 auto;
+}
+/*==========페이지 기본 스타일 끝 ======*/
+
+/*======= 이미지 게시판 이미지 미리보기 조절 ========*/
+.customListImage {
+    display: contents;
+}
+.customListImage > img {
+	width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 1px solid rgb(227, 227, 227);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+/*======= 이미지 게시판 이미지 미리보기 조절 끝 ========*/
+/* 제목 */
+#customBoard_title { 
+    line-height: 20px;
+    color: #c62917;
+    font-size: 14px;
+    font-weight: bold;  
+}
+/* 타이틀 수정 */
+.custom_status {  
+	float: right;
+	font-weight: normal;
+	color: #a6a6a6;
+}
+/* 게시판 삭제 수정 글 높이 지정 */
+.custom_status > ul > li {
+	line-height: 30px;
+}
+ 
+ /* 익명 체크박스 스타일 적용*/
+ input#anonymous {
+    display: none;
+}
+
+/* 사진 */
+a.article > img.thumbnail {
+    float: right;
+    margin-left: 10px;
+    width: 72px;
+    height: 54px;
+}
+/* 목록 리스트 이미지 높이조절 */
+.customListImage {
+	height: 40px;
+}
+
+/* 페이징 높이조절 */ 
+#pagenation {
+	padding: 20px 0 0 0;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+}
+div#customBoard_List {
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 295px;
+    border: 1px solid #e3e3e3;
+    overflow: hidden;
+    background-color: #fff;
+}
+div.card h3 {
+    padding: 10px;
+}
+div.card > div.board > a.article > p {
+    margin-bottom: 5px;
+    height: 36px;
+    line-height: 18px;
+    white-space: normal;
+    overflow: hidden;
+    color: #4c4c4c;
+    font-size: 13px;
+}
+div.card > div.board > a.article > time {
+    float: left;
+    margin-right: 10px;
+    height: 14px;
+    line-height: 14px;
+    color: #a6a6a6;
+    font-size: 11px;
+    letter-spacing: 0;
+}
+div.card > div.board > a.article > ul.status {
+    float: left;
+    list-style: none;
+}
+/*게시판 이름*/
+div.card > div.board > a.article > h4 {
+    float: left;
+    margin-right: 10px;
+    height: 14px;
+    line-height: 14px;
+    color: #a6a6a6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+/*좋아요*/
+div.card > div.board > a.article > ul.status > li.vote.active {
+    color: #c62917;
+    background-image: url(/images/new/container.articles.vote.active.png);
+}
+/*댓글*/
+div.card > div.board > a.article > ul.status > li.comment.active {
+    color: #0ca5af;
+    background-image: url(/images/new/container.articles.comment.active.png);
+}
+#customBoard_List hr {
+    clear: both;
+    width: 100%;
+    height: 0;
+    border: 0;
+}
+#more_comment{
+	border: 1px solid #e3e3e3;
+	background-color: rgba(0,0,0,0); 
+	color: black; 
+	padding: 5px;
+	margin-top:1px;
+
+}
+.reply-vote{
+	background-position: left center;
+	padding-left: 15px;
+	background-size: 12px 12px;
+	color: #c62917;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	background-image:url(https://everytime.kr/images/new/container.articles.vote.png);
+}
+
+
+/*==========메인 목록 끝======*/
+/*==========페이지 기본 스타일 시작======*/
+.page-main-style{
+	width:100%;
+	margin:0 auto;
+}
+.one-page{
+	width:600px;
+	margin:0 auto;
+}
+/*==========페이지 기본 스타일 끝 ======*/
+
+/*=========제목 & 소제목 ==========*/
+#anony_alert {
+	color:red;
+    float: right;
+    font-size:12px;
+}
+
+/*=========제목 & 소제목 ==========*/
+
+/*======== 게시판 디자인 시작 ========*/
+.custom_title {
+    box-sizing: border-box;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 530px;
+    height: 40px;
+    line-height: 24px;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    color: #292929;
+    font-size: 12px;
+    background-color: #f9f9f9;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 24px 24px;
+}	
+#subtitle {
+    color: #666;
+    font-family: "맑은 고딕", 돋움, tahoma;
+    _font-family: 돋움, tahoma;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    font-weight: normal;
+}
+.board_view {
+    margin-bottom: -1px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+    display: block;
+    padding: 15px;
+}
+.board_view > h2 {
+	margin: 0;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-weight: 400;
+    color: #292929;
+}
+.customSmall {
+	margin: 0px;
+    /*margin-bottom: 10px;*/
+    max-height: 100px;
+    line-height: 20px;
+    white-space: normal;
+    overflow: hidden;
+    color: #4c4c4c;
+    font-size: 14px;
+}
+#div_content{
+	clear:both;
+}
+
+.page-main-style-detail {
+	margin-bottom: -1px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+}
+
+a.article2 {
+    display: block;
+    padding: 15px;
+}
+/* 추천 댓글 즐겨찾기 */
+div.wrapstatus ul.status li.vote{
+	padding-left: 15px;
+	color: #c62917;
+    background-image:url('../images/customBoard/vote.png');
+}
+
+div.wrapstatus ul.status li.comm{
+	padding-left: 15px;
+    color: #0ca5af;
+    background-image:url('../images/customBoard/comment.png');
+}
+div.wrapstatus ul.status li.fav {
+    padding-left: 15px;
+    color: #ffcc1c;
+    background-image: url(../images/customBoard/fav.png);
+}
+div.wrapstatus ul.status li {
+    background-size: 12px 12px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 12px;
+    float: left;
+}
+
+/* 이미지 */
+article img.picture {
+    margin: 0 5px 5px 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+article img.picture {
+    float: left;
+}
+/* 댓글 익명 허용여부 */
+div#comment_second > #anony_alert {
+	color:red;
+    font-size:12px;
+}
+
+/*======== 게시판 디자인 끝 ========*/
+
+
+/*======== 게시판 생성 시작========*/
+#customBoard_comm {
+	display: inline;
+}
+#createCustomBoard_ul {
+	text-align: center;
+	margin: 0px;
+    padding: 0px;
+}
+#updateCustomBoard_ul{
+	padding-inline-start: 0px;
+}
+#customBoardVO {
+	border: 0px;
+}
+
+#simpleType {
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#simpleType_img {
+	float: left;
+}
+
+#simpleType_text {
+	margin: 0px;
+}
+
+.clear-both {
+	visibility: hidden;
+	clear: both;
+}
+
+#imageType {
+	width: 100%;
+	float: left;
+	margin-bottom: 40px;
+}
+
+#imageType_img {
+	float: left;
+}
+
+#Type_text>p {
+	display: inline;
+}
+
+/*======= 익명허용 =======*/
+/* The switch - the box around the slider */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  vertical-align:middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+#anonymous_opt{
+	margin-bottom: 40px;
+}
+#anonymous_opt>p {
+	margin:0px;
+	display:inline-block;
+	font-size:15px;
+	font-weight:bold;
+}
+#anonymouse_check {
+    display: inline;
+    float: left;
+}
+/* 삭제 */
+input.delete_btn {
+        background: url("../images/customBoard/delete.JPG") no-repeat;
+        border: none;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        margin-top: 15px;
+}
+/*======== 수정 삭제 ========*/
+article ul.status {
+    float: right;
+    padding: 0 2px;
+    height: 20px;
+    line-height: 20px;
+    color: #a6a6a6;
+    font-size: 12px;
+    cursor: pointer;
+}
+/*======= 글 작성 ========*/
+#container > div.articles > form.write p {
+    padding: 15px;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #fff;
+}
+#container > div.articles > form.write textarea {
+    width: 100%;
+    height: 90px;
+    border: 0;
+    color: #292929;
+    font-size: 14px;
+    resize: none;
+}
+#post_content {
+	border-bottom: 6px;
+}
+.check_anony {
+	float: right;
+	margin-right: 40px;
+}
+
+#container > div.articles > form.write ul.option li.hashtag {
+    float: left;
+    background-image: url(/images/customBoard/hashtag.png);
+}
+#container > div.articles > form.write ul.option li.attach {
+    float: left;
+    background-image: url(/images/customBoard/upload.png);
+}
+#container > div.articles > form.write ul.option li.anonym {
+    background-image: url(/images/customBoard/anonymous0.png);
+}
+#container > div.articles > form.write ul.option li.anonym.active {
+    float: right;
+    margin-right: 15px;
+    background-image: url(/images/new/customBoard/anonymous1.png);
+}
+#container > div.articles > form.write ul.option li.submit {
+    float: right;
+    background-color: #c62917;
+    background-image: url(/images/customBoard/writeSubmit.png);
+}
+#container > div.articles > form.write ul.option li {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+}
+#searchArticleForm{
+	border:0px;
+	
+}
+/* 파일 첨부 */
+form#write_customform input.file {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+form#write_customform ol.thumbnails {
+    display: none;
+    padding: 16px 12px 12px 16px;
+    border-bottom: 1px solid #e3e3e3;
+}
+form#write_customform ol.thumbnails > li#new {
+    background: transparent url(../images/customBoard/addFile.png) no-repeat center center;
+    background-size: 24px 24px;
+}
+form#write_customform ol.thumbnails > li {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    width: 85px;
+    height: 85px;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+}
+form#write_customform ol.thumbnails {
+    display: none;
+    padding: 16px 12px 12px 16px;
+    border-bottom: 1px solid #e3e3e3;
+}
+/* 해시태그 & 파일 */
+form#write_customform ul.option li.hashtag {
+    float: left;
+    background-image: url(../images/customBoard/hashtag.png);
+}
+form#write_customform ul.option li.attach {
+    float: left;
+    background-image: url(../images/customBoard/upload.png);
+}
+form#write_customform ul.option li {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+}
+/* 익명 */
+form#write_customform ul.option li.anonym {
+    float: right;
+    margin-right: 15px;
+    background-image: url(../images/customBoard/anonymous0.png);
+}
+form#write_customform ul.option li.anonym.active {
+    background-image: url(../images/customBoard/anonymous1.png);
+}
+form#write_customform ul.option li.submit {
+    float: right;
+    background-color: #c62917;
+    background-image: url(../images/customBoard/.png);
+}
+/*======== 게시판 생성 끝 ========*/
+
+/*======== 댓글 시작 ========*/
+div#comment_div{
+	padding:5px 10px 40px 10px;
+	margin-top:10px;
+	background-color:#eeeeee;
+}
+textarea.rep-content{
+	width:90%;
+	height:50px;
+	margin:10px 10px;
+}
+/*======== 댓글 끝 ========*/
+
+/*========== 댓글 rep-output 보더 작업 ===========*/
+#output {
+	/* border-top: 1px solid #e3e3e3; */
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+/*===========  ============*/
+.like-btn {
+	border:none;
+	background-color:#fff;
+	background-position: left center;
+    padding-left: 15px;
+    background-size: 12px 12px;
+    color: #c62917;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(https://everytime.kr/images/new/container.articles.vote.png);
+}
+/*======== Mypage 추가 시작 ========*/
+article img.picture.medium {
+    margin: 0 5px 5px 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+article img.picture.large {
+    margin: 0 10px 15px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+article img.picture {
+    float: left;
+}
+article div.profile {
+    float: left;
+    margin-bottom: 15px;
+    height: 40px;
+    margin-top: 5px;
+}
+article h3.large {
+	margin: 0px;
+    height: 20px;
+    max-width: 200px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+}
+article time.large {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+article ul.status {
+    float: right;
+}
+#comment_form {
+    position: relative;
+    background-color: #f8f8f8;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+}
+article hr {
+    clear: both;
+    height: 0;
+    border: 0;
+}
+/*======== Mypage 추가 끝 ========*/
+/*============= 글 등록 폼 시작 ==============*/
+form#write_customform{
+    border: 1px solid #d6d6d6;
+}
+#upload{
+    margin-top: 15px;
+}
+
+/*============= 글 등록 폼 끝 ==============*/
+/*============= 수정폼 시작 ==============*/
+.board_title {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    border: 0;
+    color: #292929;
+    font-size: 16px;
+    font-weight: bold;
+    outline:none
+}
+.board_p {
+    padding: 15px;
+    margin: 0px;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #fff;
+    height: 80px;
+}
+.board_p > textarea {
+	width: 100%;
+	height: 70px;
+    border: 0;
+    color: #292929;
+    font-size: 15px;
+    resize: none;
+    outline:none
+}
+#write_customform > #alert {
+	color:red;
+    font-size:12px;
+}
+#submitModify{
+	margin-top: 15px;
+}
+/*============= 수정폼 끝 ==============*/
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+p.large {
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #000000;
+    font-size: 15px;
+}

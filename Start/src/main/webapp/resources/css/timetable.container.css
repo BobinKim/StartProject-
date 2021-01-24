@@ -1,0 +1,791 @@
+@charset "UTF-8";
+
+a {
+    color: #666;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+div, nav, aside, article, figure {
+    display: block;
+}
+
+dl, ul, ol, menu, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/*
+ul#menu {
+    padding: revert;
+}
+*/
+div.subject{
+	letter-spacing: -0.7px;
+	
+}
+
+div#main_body{
+	width: 100%;
+	padding: 5px 5px 10px 5px;
+	/*background-color: #f8f8f8;*/
+}
+
+aside{
+	float: left;
+	width: 325px;
+	color: #666;
+	letter-space: -0.5px;
+	margin: 0;
+	padding: 0;
+}
+
+aside > form{
+	width: 100%;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+table {
+	margin: 0px auto;
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+    border: none;
+}
+
+table td, table th {
+    border: none;
+    padding: 0;
+}
+
+#main_footer {
+	display: none;
+}
+
+img, input, select, textarea {
+    vertical-align: middle;
+}
+
+form#customsubjects{
+	width: auto;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *  /  common  /  * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#container {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+}
+
+#container > hr {
+    clear: both;
+    height: 0;
+    border: 0;
+}
+
+
+aside > form.search, 
+aside > form.select {
+    margin-bottom: 5px;
+}
+
+aside > form.select > select {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #d6d6d6;
+    color: #292929;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+aside > div.title {
+	margin-bottom: 5px;
+	padding: 25px;
+	border: 1px solid #d6d6d6;
+	background-color: #fff;
+}
+
+aside > div.title > h1 {
+    color: #262626;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+aside > div.title > hr {
+    clear: both;
+    height: 0;
+    border: 0;
+}
+
+aside > div.title > div.description > ul.info {
+    margin-top: 10px;
+}
+
+aside > div.title > div.description > ul.info > li {
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+
+aside > div.title > ol.buttons.threecols > li {
+    float: left;
+    margin: 0 1px;
+    width: 89px;
+}
+
+aside > div.title > ol.buttons > li > a.image.export {
+    background-image: url("https://everytime.kr/images/new/aside.title.button.export.png");
+}
+
+aside > div.title > ol.buttons > li > a.image {
+    padding-left: 40px;
+    background-position: left center;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+aside > div.title > ol.buttons > li > a.light {
+    border: 1px solid #e3e3e3;
+    color: #737373;
+    background-color: transparent;
+}
+
+aside > div.title > ol.buttons > li > a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #c62917;
+}
+
+aside > div.title > ol.buttons > li > a.image.setting {
+    background-image: url("https://everytime.kr/images/new/aside.title.button.setting.png");
+}
+
+aside > div.title > ol.buttons.threecols > li {
+    float: left;
+    margin: 0 1px;
+    width: 89px;
+}
+
+aside > div.title > ol.buttons {
+    margin-top: 15px;
+}
+
+aside > div.menu {
+    border: 1px solid #d6d6d6;
+    background-color: #fff;
+}
+aside > div.menu > ol{
+	margin: 0;
+	padding: 0;
+}
+aside > div.menu > ol > li > a {
+    display: block;
+    padding: 0 25px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    color: #737373;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+aside > div.menu > ol > li > a.primary:after {
+    content: '기본시간표';
+    float: right;
+    color: #a6a6a6;
+    font-size: 12px;
+}
+
+aside > div.menu > ol > li:hover{
+    background-color: #f8f8f8;
+}
+
+aside > div.menu > ol > li.extension {
+    border-top: 1px solid #e3e3e3;
+}
+aside > div.menu > ol > li.extension > a {
+    padding-left: 40px;
+    color: #c62917;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 15px 15px;
+}
+aside > div.menu > ol > li.extension > a#create {
+    background-image: url("https://everytime.kr/images/new/aside.menu.extension.create.png");
+}
+aside > div.menu > ol > li.extension > a#create:hover {
+	background-color: #f8f8f8;
+}
+
+#container > div.wrap {
+    float: right;
+    width: 915px;
+    height: unset;
+}
+
+#container div.tablehead {
+	position: fixed; 
+	z-index: 90; 
+	width: inherit;
+	background-color: #f8f8f8;
+}
+
+#container div.tablebody {
+	margin-top: 39px; 
+	width: inherit;
+}
+
+#container table.tablehead,
+#container table.tablebody {
+	border-collapse: collapse; width: 100%;
+}
+
+#container table.tablehead tr {
+	height: 40px;
+}
+
+#container table.tablehead tr td {
+	font-size: 12px;
+}
+
+#container table.tablehead tr th,
+#container table.tablehead tr td {
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: #d6d6d6; 
+	color: #a6a6a6; 
+	font-weight: normal; 
+	text-align: center;
+}
+
+#container table.tablebody {
+	background-color: transparent;
+}
+
+#container table.tablehead tr th,
+#container table.tablebody tr th,
+#container table.tablebody tr th div {
+	width: 80px;
+}
+
+#container table.tablebody tr th,
+#container table.tablebody tr td {
+	border: 1px solid #d6d6d6; 
+	vertical-align: top;
+    padding: 0;
+}
+
+#container table.tablebody tr th div.hours {
+	position: absolute; z-index: 11;
+}
+#container table.tablebody tr th div.hours div.hour {
+	position: absolute; z-index: 10; left: 0; width: 100%;
+}
+#container table.tablebody tr th div.hours div.hour,
+#container table.tablebody tr th div.times div.time {
+	box-sizing: border-box; border-top: 1px solid #d6d6d6;
+	color: #a6a6a6; font-weight: normal; text-align: center;
+}
+#container table.tablebody tr td div.cols {
+	position: absolute; z-index: 11;
+}
+#container table.tablebody tr td div.cols div.subject {
+	position: absolute; z-index: 10; overflow: hidden;
+	box-sizing: border-box; width: 100%; border: 1px solid #d6d6d6; border-width: 1px 0;
+}
+#container table.tablebody tr td div.cols div.subject h3 {
+	color: #292929; font-weight: bold;
+}
+#container table.tablebody tr td div.cols div.subject p em {
+	margin-right: 5px; 
+	color: #737373; 
+	font-weight: bold;
+}
+#container table.tablebody tr td p em {
+    font-size: 11px;
+}
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+#container table.tablebody tr td div.cols div.subject p span {
+	color: #737373;
+}
+#container table.tablebody tr td div.cols div.preview {
+	background-color: #d6d6d6;
+}
+#container table.tablebody tr td div.grids div.grid {
+	box-sizing: border-box; 
+	border-top: 1px solid #e3e3e3;
+}
+#container table.tablebody tr td div.grids div.grid:first-child {
+    border-top: none;
+}
+
+#container table.tablebody tr td ul.status {
+	display: none; float: right;
+}
+#container table.tablebody tr td ul.status li {
+	float: left; 
+	width: 15px; 
+	height: 15px; 
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	cursor: pointer;
+}
+#container table.tablebody tr td ul.status li.edit {
+	background-image: url('https://everytime.kr/images/container.timetable.edit.png');
+}
+#container table.tablebody tr td ul.status li.del {
+	background-image: url('https://everytime.kr/images/container.timetable.del.png');
+}
+
+#container table.tablebody tr th div.times div.time,
+#container table.tablebody tr td div.grids div.grid {
+	height: 60px; 
+	line-height: 60px; 
+	font-size: 12px;
+}
+#container table.tablebody tr th div.times div.time:first-child,
+#container table.tablebody tr td div.grids div.grid:first-child {
+	border-top: none;
+}
+#container table.tablebody tr th div.times div.time.small,
+#container table.tablebody tr td div.grids div.grid.small {
+	height: 30px; 
+	line-height: 30px;
+}
+#container table.tablebody tr th div.hours div.hour {
+	font-size: 12px;
+}
+#container table.tablebody tr th div.hours div.hour:first-child {
+	border-top:none;
+}
+#container table.tablebody tr td h3 {
+	margin: 10px 10px 0 10px; 
+	font-size: 13px; 
+	line-height: 17px;
+}
+#container table.tablebody tr td p {
+	margin: 0 10px 10px 10px; 
+	line-height: 15px;
+}
+#container table.tablebody tr td p em {
+	font-size: 12px;
+	
+}
+#container table.tablebody tr td p span {
+	font-size: 12px;
+}
+#container table.tablebody tr td ul.status {
+	margin: 10px 10px 0 0;
+}
+
+#container ul.floating {
+	position: fixed; 
+	z-index: 80; 
+	margin: 0;
+	padding: 0;
+	left: 53%;
+	bottom: 40px;
+}
+#container ul.floating li.button {
+	float: left; margin: 0 1px; height: 40px; line-height: 40px; cursor: pointer;
+	color: #fff; font-size: 14px; font-weight: bold; background-color: #c62917; background-repeat: no-repeat;
+}
+#container ul.floating li.button.search {
+	padding: 0 15px 0 45px; 
+	border-radius: 20px 0 0 20px; 
+	background-image: url('https://everytime.kr/images/container.timetable.search.icon.png'); 
+	background-position: 20px center;
+}
+#container ul.floating li.button.custom {
+	padding: 0 20px 0 30px; 
+	border-radius: 0 20px 20px 0; 
+	background-image: url('https://everytime.kr/images/container.timetable.custom.icon.png'); 
+	background-position: 10px center;
+}
+#container ul.floating li.button.only {
+	padding: 0 25px 0 50px; border-radius: 20px; background-position: 25px center;
+}
+
+#container form.modal {
+    padding: 25px;
+    width: 400px;
+    box-sizing: border-box;
+    border-color: #666;
+}
+
+#container form.modal a.close {
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: transparent url("https://everytime.kr/images/new/container.modal.close.png") no-repeat center center;
+    background-size: 15px 15px;
+    cursor: pointer;
+}
+
+#container form.modal h3 {
+    margin-bottom: 15px;
+    color: #292929;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+#container form.modal p {
+    clear: both;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+#container form.modal p label {
+	float:none;
+    display: block;
+    margin-bottom: 5px;
+    color: #737373;
+    font-size: 12px;
+    font-weight: bold;
+}
+#container form.modal p input.text {
+    padding: 0 5px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    box-sizing: border-box;
+    color: #292929;
+    font-size: 13px;
+}
+#container form.modal p label.checkbox {
+    display: inline;
+    float: none;
+    margin: 0 5px;
+    width: auto;
+    line-height: 25px;
+    color: #292929;
+    font-size: 13px;
+    font-weight: normal;
+}
+#container form.modal .button.floatLeft {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+#container form.modal .button.light {
+    color: #737373;
+    background-color: #f2f2f2;
+}
+
+#container form.modal .button {
+    display: block;
+    float: right;
+    margin-left: 5px;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #c62917;
+    cursor: pointer;
+}
+
+#subjects {
+	height: 320px;
+    display: block;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    width: 67%;
+    border-top: 1px solid #d6d6d6;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    overflow: visible;
+}
+
+#subjects > a.close {
+    position: fixed;
+    right: 270px;
+    bottom: 314px;
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0 12px;
+    line-height: 32px;
+    border-radius: 16px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #c62917;
+    cursor: pointer;
+    z-index:99;
+}
+#subjects .list {
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#subjects table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+#subjects > div.list > table > tbody > tr:hover {
+  background-color: #fff;
+}
+
+#customsubjects {
+	display: none;
+    position: absolute;
+    z-index: 97;
+    left: 45%;
+    bottom: 0;
+    padding: 25px;
+    border: 1px solid #d6d6d6;
+    border-bottom: 0;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+#customsubjects a.close {
+    position: absolute;
+    z-index: 99;
+    right: 10px;
+    top: 0;
+    margin-top: -20px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    background: #a6a6a6 url('https://everytime.kr/images/subjects.close.icon.png') no-repeat center center;
+    cursor: pointer;
+}
+
+#customsubjects a.close:hover{
+	background: #c62917 url('https://everytime.kr/images/subjects.close.icon.png') no-repeat center center;
+}
+
+#customsubjects h2 {
+    margin-bottom: 20px;
+    color: #292929;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#customsubjects dl dt {
+    clear: both;
+    float: left;
+    margin-bottom: 5px;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    color: #a6a6a6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#customsubjects dl dd {
+    float: left;
+    margin-bottom: 5px;
+    margin: 0;
+}
+
+#customsubjects dl dd input.text {
+    padding: 0 5px;
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d6d6d6;
+    color: #292929;
+    font-size: 13px;
+    background-color: #f2f2f2;
+}
+
+#customsubjects dl dt {
+    clear: both;
+    float: left;
+    margin-bottom: 5px;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    color: #a6a6a6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 400px;
+    border: 1px solid #d6d6d6;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace ol.weeks li {
+    float: left;
+    margin-right: 1px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    color: #a6a6a6;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace ol.weeks li.active {
+    color: #fff;
+    background-color: #c62917;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace p {
+    clear: left;
+    padding: 0;
+    padding-top: 5px;
+    margin: 0;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace p select {
+    margin-right: 5px;
+    height: 30px;
+    border: 1px solid #d6d6d6;
+    color: #292929;
+    font-size: 13px;
+    background-color: transparent;
+}
+#customsubjects dl dd.timeplaces div.timeplace p span {
+    margin-right: 5px;
+}
+
+#customsubjects dl dd.timeplaces div.timeplace p input {
+    width: 80px;
+}
+
+#customsubjects dl dd.timeplaces a.new, 
+#customsubjects dl dd.timeplaces a.remove {
+    padding: 0 5px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #c62917;
+    font-weight: bold;
+}
+
+#customsubjects dl dd.timeplaces a.remove {
+    float: right;
+}
+
+#customsubjects dl dd.timeplaces a.new strong {
+    font-size: 18px;
+}
+
+#customsubjects div.submit {
+    text-align: right;
+}
+
+#customsubjects .button {
+    padding: 0 10px;
+    border: 0;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #c62917;
+    cursor: pointer;
+}
+
+
+.color0 { background-color: grey; }
+.color1 { background-color: #fdfcdd; }
+.color2 { background-color: #ffe9e9; }
+.color3 { background-color: #eff9cc; }
+.color4 { background-color: #dcf2e9; }
+.color5 { background-color: #dee8f6; }
+.color6 { background-color: #fff8cc; }
+.color7 { background-color: #ffedda; }
+.color8 { background-color: #dceef2; }
+.color9 { background-color: #f2e8eb; }
+.color10 { background-color: #fff9df; }
+.color11 { background-color: #f0fce0; }
+.color12 { background-color: #f0e7dd; }
+.color13 { background-color: #f9f0e3; }
+.color14 { background-color: #fffce1; }
+.color15 { background-color: #f4eaff; }
+.color16 { background-color: #fde1d0; }
+.color17 { background-color: #e6f0f4; }
+.color18 { background-color: #ffeaea; }
+.color19 { background-color: #edf9e6; }
+.color20 { background-color: #dff2fd; }
+.color21 { background-color: #ddf7e6; }
+.color22 { background-color: #eaffcc; }
+.color23 { background-color: #fef3c7; }
+.color24 { background-color: #f0e2dd; }
+.color25 { background-color: #f2e8ef; }
+.color26 { background-color: #ffdfdf; }
+.color27 { background-color: #f9e6cc; }
+.color28 { background-color: #dbe8f2; }
+.color29 { background-color: #d3e1f3; }
+.color30 { background-color: #ccf7ff; }
+
+.subjectTr {
+    border-bottom: 1px solid #ededed !important;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+.subjectTd {
+    padding: 5px 8px;
+    line-height: 20px;
+    color: #4c4c4c;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.active > a{
+	color: #c62917 !important;
+	font-weight: bold;
+	background-color: #f8f8f8;
+}
+.bold { font-weight: bold !important; }
+.floatLeft { float: left !important; }
+.floatRight { float: right !important; }
+.clearBoth { clear: both !important; }
+.clearBothOnly { clear: both !important; margin: 0 !important; padding: 0 !important; height: 0 !important; }
+.left { text-align: left !important; }
+.right { text-align: right !important; }
+.center { text-align: center !important; }
+.pointer { cursor: pointer !important; }
+.hide { display: none !important; }
+.show { display: block !important; }
+.modal { display: none; position: fixed; z-index: 1000; left: 50%; top: 50%; background-color: #fff; }
+.modalwrap { position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; opacity: .5; filter: alpha(opacity=50); }
+.modalwrap.lighter { opacity: .2; filter: alpha(opacity=20); }

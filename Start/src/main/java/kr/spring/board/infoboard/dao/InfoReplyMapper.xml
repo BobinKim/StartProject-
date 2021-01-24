@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+ <mapper namespace="kr.spring.board.infoboard.dao.InfoReplyMapper"> 
+ 
+<!-- 댓글 목록 -->
+ 	<select id="selectListReply" parameterType="map"
+ 	                     resultType="infoReplyVO">
+ 		SELECT 
+ 		    comment_num,
+ 		    content,
+ 		   TO_CHAR(reg_date,'MM-DD HH24:MI') reg_date,
+ 		   post_num,
+ 		   id,
+ 		   anonymous, 
+ 		   mem_num,
+ 		   like_cnt
+ 		FROM (SELECT  
+ 		        a.*,
+ 		        rownum rnum
+ 		      FROM (SELECT
+ 		              f.comment_num,
+ 		              content,
+ 		              f.reg_date,
+ 		              post_num,
+ 		              id,
+ 		              anonymous,
+ 		              f.mem_num, 
+ 		              like_cnt
+
+ 		            FROM infoboard_comment f
+ 		            LEFT OUTER JOIN (SELECT comment_num, COUNT(*) like_cnt FROM infoboard_like_comment GROUP BY comment_num) c ON f.comment_num=c.comment_num
+ 		            JOIN member m ON f.mem_num=m.mem_num 
+ 		            JOIN member_detail d ON m.mem_num=d.mem_num
+ 		            WHERE post_num = #{post_num}
+ 		            ORDER BY comment_num ASC)a) 
+ 		<![CDATA[
+ 		WHERE rnum >= #{start} AND rnum <= #{end}
+ 		]]>                                 
+ 	</select>
+ 	
+</mapper>

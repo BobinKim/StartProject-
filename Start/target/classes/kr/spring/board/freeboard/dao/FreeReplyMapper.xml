@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+ <mapper namespace="kr.spring.board.freeboard.dao.FreeReplyMapper">
+ 
+<!-- 댓글 목록 -->
+ 	<select id="selectListReply" parameterType="map"
+ 	                     resultType="freeReplyVO">
+ 		SELECT
+ 		    comment_num,
+ 		    content,
+ 		   TO_CHAR(reg_date,'MM/DD HH24:MI') reg_date,
+ 		   post_num,
+ 		   id,
+ 		   anonymous,
+ 		   mem_num,
+ 		  like_cntR,
+ 		  photoname
+ 		FROM (SELECT 
+ 		        a.*,
+ 		        rownum rnum
+ 		      FROM (SELECT
+ 		             f.comment_num,
+ 		              content,
+ 		              f.reg_date,
+ 		              f.post_num,
+ 		              id,
+ 		              f.anonymous,
+ 		              f.mem_num,
+ 		              like_cntR,
+ 		              photoname
+ 		            FROM freeboard_comment f
+ 		            LEFT OUTER JOIN (SELECT COUNT(*) like_cntR,comment_num FROM freeboard_like_comment GROUP BY comment_num)c ON f.comment_num = c.comment_num
+ 		            JOIN member m ON f.mem_num=m.mem_num 
+ 		            JOIN member_detail d ON m.mem_num=d.mem_num
+ 		            WHERE post_num = #{post_num}
+ 		            ORDER BY comment_num ASC)a)
+ 		<![CDATA[
+ 		WHERE rnum >= #{start} AND rnum <= #{end}
+ 		]]>                                 
+ 	</select>
+<delete id = "deleteBoard" parameterType="Integer">
+	DELETE FROM freeboard f WHERE post_num=#{post_num}
+	(select comment_num FROM freeboard_comment c WHERE c.post_num = f.post_num )
+</delete>
+</mapper>

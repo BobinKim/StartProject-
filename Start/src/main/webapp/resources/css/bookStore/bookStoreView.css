@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+a{
+	color: #666;
+}
+td{
+	border: 1px solid #ddd !important;
+	border-radius: 5px;
+}
+.authors_title,
+.publisher_title{
+	font-size: 10px;
+	color: #999;
+}
+ul{
+	padding: 0;
+}
+.list{
+	padding: 20px 0;
+	margin: 10px 0 !important;
+	border: 1px solid #ddd;
+	padding-left: 30px;
+	border-radius: 5px;
+}
+.list label{
+	display: inline-block;
+	width: 100px;
+}
+.list input{
+	float: right;
+	margin-right: 10px;
+}
+.map_form{
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 20px;
+}
+.message_btn{
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: -5px;
+}
+.list_btn,
+.complete_btn,
+#delete_btn{
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Service 등록 -->
+	<beans:bean id="mailService" class="kr.spring.mail.service.MailSendServiceImpl"/>
+	
+	<!-- 시간표에 보여주기 위해 사용하는 공용클래스 -->
+	<beans:bean id="timesMaker" class="kr.spring.timetable.common.TimesMaker"/>
+	
+	<!-- 학점계산기 공용클래스 -->
+	<beans:bean id="calculator" class="kr.spring.calculator.common.Calculator"/>
+	
+	<!-- popup창 호출시 tiles를 이용하지 않고 JSP를 호출해야 하는 경우 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2"/>
+	</beans:bean>
+	
+	<!-- @Controller 오토스캔 -->
+	<context:component-scan 
+	               base-package="kr.spring.board.customboard.controller"/>
+	<context:component-scan 
+	               base-package="kr.spring.board.freeboard.controller"/>
+	<context:component-scan 
+	               base-package="kr.spring.board.infoboard.controller"/>
+	<context:component-scan 
+	               base-package="kr.spring.bookstore.controller" />
+	<context:component-scan 
+	               base-package="kr.spring.main.controller" />
+	<context:component-scan 
+	               base-package="kr.spring.member.controller" />
+	<context:component-scan 
+	               base-package="kr.spring.message.controller" />           
+	<context:component-scan 
+	               base-package="kr.spring.timetable.controller" />
+	<context:component-scan 
+	               base-package="kr.spring.calculator.controller" />
+	<context:component-scan 
+	               base-package="kr.spring.review.controller" />
+	               
+	<!-- tiles 설정 -->
+	<beans:bean id="tilesConfigurer"
+	 class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/main_board.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/create_board.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/freeBoard.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/infoBoard.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/customBoard.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/timetable.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/review.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/calculator.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/bookStore.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/message.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	<beans:bean 
+	  class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass"
+		  value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+		<beans:property name="order" value="1"/>  
+	</beans:bean>
+	
+	<!-- 파일 다운로드 -->
+	<beans:bean
+	  class="org.springframework.web.servlet.view.BeanNameViewResolver"
+	  p:order="0"/>
+	  
+	<!-- 파일 업로드 -->
+	<beans:bean id="multipartResolver"
+	   class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="52428800"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+
+	<!-- 메시지 처리 --> 
+	<beans:bean id="messageSource"
+	  class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>messages.validation</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<interceptors>
+	    
+		<interceptor>
+			<mapping path="/main/main_board.do"/>
+			<mapping path="/member/myPage.do"/>
+			<mapping path="/member/deleteMember.do"/>
+			<mapping path="/member/changeNickname.do"/>
+			<mapping path="/member/changePasswd.do"/>
+			<mapping path="/timetable/timetableView.do"/>
+			<mapping path="/timetable/createTimetable.do"/>
+			<mapping path="/timetable/insertSubject.do"/>
+			<mapping path="/timetable/deleteSubject.do"/>
+			<mapping path="/timetable/selectCustomSubject.do"/>
+			<mapping path="/timetable/insertUpdateCustomSubject.do"/>
+			<mapping path="/timetable/selectTimetable.do"/>
+			<mapping path="/timetable/updateTimetable.do"/>
+			<mapping path="/timetable/deleteTimetable.do"/>
+			<mapping path="/customBoard/createCustomBoard.do"/>
+			<mapping path="/customBoard/updateCustomBoard.do"/>
+			<mapping path="/customBoard/deleteCustomBoard.do"/>
+			<mapping path="/customBoard/customPostList.do"/>
+			<mapping path="/customBoard/customPostDetail.do"/>
+			<mapping path="/customBoard/customPostWrite.do"/>	
+			<mapping path="/customBoard/customPostModify.do"/>		
+			<mapping path="/customBoard/customPostDelete.do"/>
+			<mapping path="/review/reviewList.do"/>
+			<mapping path="/review/reviewDetail.do"/>
+			<mapping path="/review/search.do"/>
+			<mapping path="/review/insertReview.do"/>
+			<mapping path="/bookStore/bookStoreList.do"/>
+			<mapping path="/bookStore/bookStoreSearch.do"/>
+			<mapping path="/bookStore/bookStoreWrite.do"/>
+			<mapping path="/bookStore/bookStoreView.do"/>
+			<mapping path="/bookStore/bookStoreModify.do"/>
+			<beans:bean class="kr.spring.interceptor.LoginCheckInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="/infoBoard/update.do"/> 
+			<mapping path="/infoBoard/delete.do"/> 
+			<beans:bean class="kr.spring.interceptor.WriterCheckInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/freeBoard/update.do"/>
+			<mapping path="/freeBoard/delete.do"/>
+			<beans:bean class="kr.spring.interceptor.FreeCheckInterceptior"/>
+		</interceptor>
+		<!-- 사용자 생성 게시판 접근 권한 -->
+		<interceptor>
+			<mapping path="/customBoard/deleteCustomBoard.do"/>
+			<mapping path="/customBoard/updateCustomBoard.do"/>
+			<beans:bean class="kr.spring.interceptor.CustomBoardWriterCheck"/>
+		</interceptor>
+		<!-- 사용자 생성 게시글 접근 권한 -->
+		<interceptor>
+			<mapping path="/customBoard/customPostDelete.do"/>
+			<mapping path="/customBoard/customPostModify.do"/>
+			<beans:bean class="kr.spring.interceptor.CustomPostWriterCheck"/>
+		</interceptor>
+		<!-- 메인 화면  -->
+		<interceptor>
+			<mapping path="/main/main_board.do"/>
+			<mapping path="/freeBoard/detail.do"/>
+			<mapping path="/infoBoard/infoBoardList.do"/>
+			<mapping path="/infoBoard/write.do"/>
+			<mapping path="/infoBoard/detail.do"/>
+			<mapping path="/customBoard/createCustomBoard.do"/>
+			<mapping path="/customBoard/customPostList.do"/>
+			<mapping path="/customBoard/freeBoardWrite.do"/>
+			<mapping path="/customBoard/customPostDetail.do"/>
+			<mapping path="/customBoard/customPostWrite.do"/>
+			<beans:bean class="kr.spring.interceptor.CustomBoardListInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
+	
+
+	
+	<!-- BLOB 타입 이미지 표시 -->
+	<beans:bean id="imageView" class="kr.spring.view.ImageView"/>
+	
+	 <!-- email 인증 관련   -->
+    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.gmail.com" />
+        <beans:property name="port" value="587" />
+        <beans:property name="username" value="everyminutetest@gmail.com"/>
+        <beans:property name="password" value="qwqw1212!@" />
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.transport.protocol">smtp</beans:prop>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+                <beans:prop key="mail.debug">true</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+	
+</beans:beans>
